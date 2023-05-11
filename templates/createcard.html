@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="width: 100%">{% block title %} Add a New Card {% endblock %}</h1>
+    <form method="post">
+        <p>
+            <label for="front">Card Question</label>
+            <input type="text" name="front"
+                   placeholder="Card Question">
+            </input>
+        </p>
+        <p>
+            <label for="back">Card Answer</label>
+            <input type="text" name="back"
+                   placeholder="Card Answer">
+            </input>
+        </p>
+        <p>
+            <label for="collection_id">Collection ID</label>
+            <input type="number" name="collection_id"
+                   placeholder="Collection ID">
+            </input>
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}

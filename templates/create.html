@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Create {% endblock %}</h1>
+    <div class="content">
+        <div class="collection">
+            <p class="name">
+                <a href="{{ url_for('createcollection') }}">Create Collection</a>
+            </p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="collection">
+            <p class="name">
+                <a href="{{ url_for('createcard') }}">Create Card</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}
+

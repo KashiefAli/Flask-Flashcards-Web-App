@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="title">{% block title %} Collections {% endblock %}</h1>
+<div class="content">
+    {% for collection in collections %}
+    <div class="collection">
+        <p><b>#{{ collection.id }}</b></p>
+        <b>
+            <p class="name">
+                <a href="{{ url_for('collection', collection_id=collection.id)}}">
+                    {{ collection.name }}
+                </a>
+            </p>
+        </b>
+    <a href="{{ url_for('editcollection', collection_id=collection.id) }}">Edit</a>
+    <hr>
+        <form method="POST"
+                action="{{ url_for('deletecollection', collection_id=collection.id) }}">
+            <input type="submit" value="Delete Collection"
+                onclick="return confirm('Are you sure you want to delete this collection?')">
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
